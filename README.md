@@ -30,6 +30,7 @@ selectableLayer.right = anotherLayer
 ```
 
 ## Overriding default options
+You can override the properties of the focusManager object for individual layers
 ```
 selectableLayer.selectionBorder = false
 selectableLayer.selectionBorderWidth = 5
