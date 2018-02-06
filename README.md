@@ -42,7 +42,7 @@ selectableLayer.states.on =
  ```
  
 ## Events
-### Event Map fro PS4 and Xbox One controllers
+### Event Map for PS4 and Xbox One controllers
  ![Event Map For buttons](https://cdn-images-1.medium.com/max/2000/1*kqzcdTw5ywNYhwqHitRCUA.png "Event Map For buttons")
 
 ### Examples:
