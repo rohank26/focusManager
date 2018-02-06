@@ -1,5 +1,5 @@
-# focusManager
-Focus Manager for Framer. [Read the full documentation here](https://medium.com/@rohan.k/prototyping-for-tv-screens-with-framer-a22f57c098a2 "Google's Homepage")
+# Focus Manager for Framer.
+[Read the full documentation here](https://medium.com/@rohan.k/prototyping-for-tv-screens-with-framer-a22f57c098a2 "Google's Homepage")
 
 
 
