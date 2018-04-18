@@ -1,12 +1,14 @@
 # Focus Manager for Framer.
-[Read the full documentation here](https://medium.com/@rohan.k/prototyping-for-tv-screens-with-framer-a22f57c098a2 "Google's Homepage")
+[Read the full documentation here](https://medium.com/@rohan.k/prototyping-for-tv-screens-with-framer-a22f57c098a2)
 
 ## Including the module in your project
+Copy the .coffee files in the `modules` folder of your framer project. Include the focusManager module in your framer project:
 ```
 {focusManager} = require ‘focusManager’
 ```
 
 ## Initializing the focus manager
+The focus manager maintains and tracks focus around the screen. The `focusmanager` object accepts certain properties. Read the [full documentation](https://medium.com/@rohan.k/prototyping-for-tv-screens-with-framer-a22f57c098a2)to know more about each of these properties in detail.
 ```
 focusManager = new focusManager
      leftStickDpad: boolean
@@ -18,10 +20,11 @@ focusManager = new focusManager
      defaultSelectionBorderColor: color
 ```
 ## Making a layer selectable
+A layer is required to be made selectable in order for it to accept focus.
 `selectableLayer.isSelectable = true`
 
 ## Specifying layer targets
-The module will automatically try and find the nearest layer to move the selection to. If it doesn't work, you can override it by specifying targets manually
+The module will automatically try and find the nearest layer to move the focus to whe na button is pressed. You can override this by specifying targets manually
 ```
 selectableLayer.up = anotherLayer
 selectableLayer.down = anotherLayer
@@ -30,7 +33,7 @@ selectableLayer.right = anotherLayer
 ```
 
 ## Overriding default options
-You can override the properties of the focusManager object for individual layers
+You can override the properties of the focusManager object for individual selectable layers
 ```
 selectableLayer.selectionBorder = false
 selectableLayer.selectionBorderWidth = 5
@@ -43,12 +46,14 @@ selectableLayer.states.on =
  
 ## Events
 ### Event Map for PS4 and Xbox One controllers
+An event is generated for the currently selected layer when a button is pressed. The event generated for each of the buttons shown in the event map below
+
  ![Event Map For buttons](https://cdn-images-1.medium.com/max/2000/1*kqzcdTw5ywNYhwqHitRCUA.png "Event Map For buttons")
 
-### Examples:
+### Event Types:
 
 #### Simple Events
-An event is generated on a layer for each of the buttons shown in the event map
+These events are generated on the layer everytime a button is pressed
 ```
 selectableLayer.on "up", ->
      print "up button pressed"
@@ -57,14 +62,14 @@ selectableLayer.on "cross", ->
 ``` 
 
 #### ButtonPress Events
-This event is generated on the a layer everytime any button is pressed. The button's event name is passed as an argument to the event handler
+This is a common event generated on the selectable layer for all button presses. The button name is passed as an argument to the event handler
 ```
 selectableLayer.on "buttonPress", (button) ->
      print button, " was pressed on ", this.name
 ```
 
 #### Blur & Focus Events
-A blur event is generated on a layer anytime the layer is deselected, and a focus event is generated anytime the layer is selected
+Blur & focus events are generated on a layer wheneber the layer loses or gains focus
 ```
 selectableLayer.on "focus", ->
      print this.name," is selected"
@@ -79,10 +84,10 @@ This event is generated on the focusManager object everytime the selection chang
 focusManager.on "change:selection", (layer) ->
      print "selection changed to ", layer.name
 ```
-#### Event Propagation
+### Event Propagation
 Every time an event is generated on a selectable layer,  it is also propagated to each of its parent layers. 
 This continues all the way until the window.document level. The selected layer is passed as an argument to the event handler
 ```
 flowComponent.on "circle", (selectedLayer) ->
      print "circle event generated on ", selectedLayer.name
-```
+``` 
