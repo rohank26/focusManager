@@ -54,12 +54,16 @@ try Layer.define "isSelectable",
 			allSelectables.push(@)
 			@.states.defaultOnState = defaultOnState
 			@.states.defaultOffState = defaultOffState
-			@.stateSwitch("defaultOffState")
+
+			if(@.states.off is undefined)
+				@.stateSwitch("defaultOffState")
+			else
+				@.stateSwitch("off")
 			
 		if(value is false)
 			delete @.states.defaultOnState
 			delete @.states.defaultOffState
-			#TODO: remove layer from all selectables
+			#TODO: remove layer from allSelectables array
 
 try Layer.define "selected",
 	get: -> @_properties["selected"]
