@@ -8,7 +8,7 @@ Copy the .coffee files in the `modules` folder of your framer project. Include t
 ```
 
 ## Initializing the focus manager
-The focus manager maintains and tracks focus around the screen. The `focusmanager` object accepts certain properties. Read the [full documentation](https://medium.com/@rohan.k/prototyping-for-tv-screens-with-framer-a22f57c098a2)to know more about each of these properties in detail.
+The focus manager maintains and tracks focus around the screen. The `focusmanager` object accepts certain properties. Read the  [full documentation](https://medium.com/@rohan.k/prototyping-for-tv-screens-with-framer-a22f57c098a2)to know more about each of these properties in detail.
 ```
 focusManager = new focusManager
      leftStickDpad: boolean
@@ -17,11 +17,20 @@ focusManager = new focusManager
      defaultOffstate: object
      defaultSelectionBorder: boolean
      defaultSelectionBorderWidth: integer
-     defaultSelectionBorderColor: color
+     defaultSelectionBorderColor: color 
 ```
+
 ## Making a layer selectable
 A layer is required to be made selectable in order for it to accept focus.
-`selectableLayer.isSelectable = true`
+```
+selectableLayer.isSelectable = true
+```
+
+## Selecting a default layer
+To specify the default focus layer or to manually focus a layer.
+```
+selectableLayer.selectedItem = selectableLayer
+```
 
 ## Specifying layer targets
 The module will automatically try and find the nearest layer to move the focus to whe na button is pressed. You can override this by specifying targets manually
