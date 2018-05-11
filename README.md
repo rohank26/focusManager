@@ -29,7 +29,7 @@ selectableLayer.isSelectable = true
 ## Selecting a default layer
 To specify the default focus layer or to manually focus a layer.
 ```
-selectableLayer.selectedItem = selectableLayer
+focusManager.selectedItem = selectableLayer
 ```
 
 ## Specifying layer targets
