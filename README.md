@@ -8,7 +8,7 @@ Copy the .coffee files in the `modules` folder of your framer project. Include t
 ```
 
 ## Initializing the focus manager
-The focus manager maintains and tracks focus around the screen. The `focusmanager` object accepts certain properties. Read the  [full documentation](https://medium.com/@rohan.k/prototyping-for-tv-screens-with-framer-a22f57c098a2)to know more about each of these properties in detail.
+The focus manager maintains and tracks focus around the screen. The `focusmanager` object accepts certain properties. Read the  [full documentation](https://medium.com/@rohan.k/prototyping-for-tv-screens-with-framer-a22f57c098a2) to know more about each of these properties in detail.
 ```
 focusManager = new focusManager
      leftStickDpad: boolean
